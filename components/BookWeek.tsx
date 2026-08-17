@@ -4,9 +4,9 @@ export default function BookWeek() {
   return (
     <article className="book-card">
       <div className="book-cover" aria-label={`Обложка ${bookOfWeek.title}`}>
-        <span>MORROW / BOOK</span>
-        <strong>FOUR<br/>THOUSAND<br/>WEEKS</strong>
-        <small>OLIVER BURKEMAN</small>
+        <span>MORROW / КНИГА</span>
+        <strong>ЧЕТЫРЕ<br/>ТЫСЯЧИ<br/>НЕДЕЛЬ</strong>
+        <small>ОЛИВЕР БЁРКМАН</small>
       </div>
       <div className="book-copy">
         <span className="section-kicker">КНИГА НЕДЕЛИ</span>
@@ -14,9 +14,9 @@ export default function BookWeek() {
         <div className="book-author">{bookOfWeek.author} · {bookOfWeek.subtitle}</div>
         <p>{bookOfWeek.why}</p>
         <dl>
-          <div><dt>Why read it</dt><dd>{bookOfWeek.why}</dd></div>
-          <div><dt>What you’ll get</dt><dd>{bookOfWeek.get}</dd></div>
-          <div><dt>Reading time</dt><dd>{bookOfWeek.reading}</dd></div>
+          <div><dt>Зачем читать</dt><dd>{bookOfWeek.why}</dd></div>
+          <div><dt>Что получите</dt><dd>{bookOfWeek.get}</dd></div>
+          <div><dt>Время чтения</dt><dd>{bookOfWeek.reading}</dd></div>
         </dl>
         <a className="pill pill-outline-light" href={bookOfWeek.source} target="_blank" rel="noreferrer">О книге у издателя <span>↗</span></a>
       </div>
