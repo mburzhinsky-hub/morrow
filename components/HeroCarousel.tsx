@@ -24,7 +24,7 @@ export default function HeroCarousel({ stories }: { stories: Article[] }) {
           <h1>{story.title}</h1>
           <p>{story.lead}</p>
           <div className="hero-meta">Чтение {story.readingTime} мин <span>·</span> {category.ru}</div>
-          <Link className="pill pill-light" href={`/article/${story.slug}`}>Читать материал <span>→</span></Link>
+          <Link className="pill pill-light" href={`/article/${story.slug}/`}>Читать материал <span>→</span></Link>
         </div>
         <div className="hero-pager" aria-label="Переключение главных материалов">
           <span>{String(index + 1).padStart(2, '0')} / {String(stories.length).padStart(2, '0')}</span>

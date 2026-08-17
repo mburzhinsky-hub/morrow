@@ -49,7 +49,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
         <article>
           <header className="article-header shell">
-            <Link href={`/${article.category}`} className="article-category">
+            <Link href={`/${article.category}/`} className="article-category">
               {category.label} · {articleTypeLabels[article.articleType]}
             </Link>
             <h1>{article.title}</h1>

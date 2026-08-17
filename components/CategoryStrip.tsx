@@ -8,7 +8,7 @@ export default function CategoryStrip() {
       {(Object.keys(categories) as Array<keyof typeof categories>).map((key) => {
         const item = categories[key];
         return (
-          <Link href={`/${key}`} className="category-tile" key={key}>
+          <Link href={`/${key}/`} className="category-tile" key={key}>
             <div className="category-thumb"><Image src={item.image} alt="" fill sizes="(max-width: 800px) 44vw, 15vw" /></div>
             <span className="category-label">{item.label}</span>
             <strong>{item.ru}</strong>

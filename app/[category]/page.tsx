@@ -55,7 +55,7 @@ export default async function CategoryRoute({ params }: { params: Promise<{ cate
             <span>ГЛАВНЫЙ МАТЕРИАЛ · {articleTypeLabels[feature.articleType].toUpperCase()}</span>
             <h2>{feature.title}</h2>
             <p>{feature.lead}</p>
-            <Link href={`/article/${feature.slug}`}>Читать →</Link>
+            <Link href={`/article/${feature.slug}/`}>Читать →</Link>
           </div>
         </section>
         <section className="section shell">
