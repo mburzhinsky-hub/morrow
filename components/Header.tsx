@@ -23,7 +23,7 @@ export default function Header({ dark = false }: { dark?: boolean }) {
           <span>MORROW</span>
         </Link>
         <nav className="desktop-nav" aria-label="Основная навигация">
-          <Link href="/#today">Today</Link>
+          <Link href="/#today">Сегодня</Link>
           {(Object.keys(categories) as Array<keyof typeof categories>).map((key) => (
             <Link key={key} href={`/${key}`}>{categories[key].label[0] + categories[key].label.slice(1).toLowerCase()}</Link>
           ))}
@@ -38,12 +38,12 @@ export default function Header({ dark = false }: { dark?: boolean }) {
         </div>
       </div>
       <div className={`mobile-panel ${open ? 'open' : ''}`}>
-        <Link href="/#today" onClick={() => setOpen(false)}>Today</Link>
+        <Link href="/#today" onClick={() => setOpen(false)}>Сегодня</Link>
         {(Object.keys(categories) as Array<keyof typeof categories>).map((key) => (
           <Link key={key} href={`/${key}`} onClick={() => setOpen(false)}>{categories[key].label}</Link>
         ))}
-        <Link href="/events" onClick={() => setOpen(false)}>Events</Link>
-        <Link href="/watch" onClick={() => setOpen(false)}>Watch</Link>
+        <Link href="/events" onClick={() => setOpen(false)}>События</Link>
+        <Link href="/watch" onClick={() => setOpen(false)}>Подборка</Link>
       </div>
     </header>
   );

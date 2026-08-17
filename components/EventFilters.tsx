@@ -6,13 +6,15 @@ import { events } from '@/data/content';
 export default function EventFilters() {
   const [city, setCity] = useState('Все города');
   const [category, setCategory] = useState('Все категории');
+  const cities = useMemo(() => Array.from(new Set(events.map(event => event.city))), []);
+  const categories = useMemo(() => Array.from(new Set(events.map(event => event.category))), []);
   const filtered = useMemo(() => events.filter(event => (city === 'Все города' || event.city === city) && (category === 'Все категории' || event.category === category)), [city, category]);
   return (
     <>
       <div className="filters">
-        <label>Город<select value={city} onChange={e => setCity(e.target.value)}><option>Все города</option><option>Москва</option></select></label>
-        <label>Категория<select value={category} onChange={e => setCategory(e.target.value)}><option>Все категории</option><option>Искусство</option></select></label>
-        <label>Дата<select defaultValue="Ближайшие"><option>Ближайшие</option><option>До конца октября</option><option>До конца ноября</option></select></label>
+        <label>Город<select value={city} onChange={e => setCity(e.target.value)}><option>Все города</option>{cities.map(item => <option key={item}>{item}</option>)}</select></label>
+        <label>Категория<select value={category} onChange={e => setCategory(e.target.value)}><option>Все категории</option>{categories.map(item => <option key={item}>{item}</option>)}</select></label>
+        <label>Период<select defaultValue="Актуальные"><option>Актуальные</option><option>До конца сентября</option><option>До конца ноября</option></select></label>
       </div>
       <div className="events-list-page">
         {filtered.map((event) => (

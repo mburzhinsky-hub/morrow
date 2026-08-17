@@ -15,10 +15,11 @@ export default function HeroCarousel({ stories }: { stories: Article[] }) {
   };
 
   return (
-    <section className="hero" style={{ backgroundImage: `url(${story.image})` }} aria-label="Материал дня">
+    <section className="hero" aria-label="Материал дня">
+      <div key={`bg-${story.slug}`} className="hero-bg" style={{ backgroundImage: `url(${story.image})` }} />
       <div className="hero-shade" />
       <div className="hero-content shell">
-        <div className="hero-copy">
+        <div key={`copy-${story.slug}`} className="hero-copy hero-copy-animated">
           <div className="eyebrow">{story.eyebrow || 'ВЫБОР РЕДАКЦИИ'} · {category.label}</div>
           <h1>{story.title}</h1>
           <p>{story.lead}</p>

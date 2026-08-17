@@ -6,8 +6,8 @@ export default function TodayBriefing() {
     <section id="today" className="today-section section shell">
       <div className="section-heading split-heading">
         <div>
-          <span className="section-kicker">CURATED BRIEFING</span>
-          <h2>TODAY</h2>
+          <span className="section-kicker">КОРОТКАЯ РЕДАКЦИОННАЯ ПОДБОРКА</span>
+          <h2>СЕГОДНЯ</h2>
           <p>Что стоит вашего времени сегодня</p>
         </div>
         <p className="section-note">Пять вещей. Без бесконечной ленты.</p>
