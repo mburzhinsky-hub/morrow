@@ -13,7 +13,7 @@ export default function SearchClient() {
   }, [query]);
   return (
     <div className="search-ui">
-      <div className="search-field"><span>⌕</span><input autoFocus value={query} onChange={e => setQuery(e.target.value)} placeholder="AI, сон, дружба, стоицизм…" aria-label="Поиск по материалам"/></div>
+      <div className="search-field"><span>⌕</span><input autoFocus value={query} onChange={e => setQuery(e.target.value)} placeholder="ИИ, сон, дружба, стоицизм…" aria-label="Поиск по материалам"/></div>
       <div className="search-count">{results.length} материалов</div>
       <div className="search-results">
         {results.map(article => (
