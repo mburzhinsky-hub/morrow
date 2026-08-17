@@ -294,7 +294,7 @@ export const articles: Article[] = [
     sources: [WHO_ACTIVITY], related: ['silovye-posle-30', 'son-posle-30', 'gorod-peshkom']
   },
   {
-    slug: 'son-posle-30', category: 'health', articleType: 'evidence',
+    slug: 'son-posle-30', category: 'health', articleType: 'evidence', sectionTitles: { evidence: 'Почему одной длительности недостаточно', nuance: 'Где трекер создаёт ложную точность', practice: 'Начать с окна сна' },
     title: 'Сон после 30: почему «семь часов» — ориентир, а не культ цифры',
     lead: 'Консенсус специалистов говорит о семи и более часах для большинства взрослых, но хороший сон нельзя свести к таймеру.',
     date: '17.08.2026', readingTime: 7, image: img.health2, imageAlt: 'Спокойная спальня в естественном свете',
@@ -306,7 +306,7 @@ export const articles: Article[] = [
     sources: [AASM_SLEEP], related: ['150-minut-dvizheniya-v-nedelyu', 'kofein-bez-kulta', 'dom-tishe']
   },
   {
-    slug: 'silovye-posle-30', category: 'health', articleType: 'evidence',
+    slug: 'silovye-posle-30', category: 'health', articleType: 'evidence', sectionTitles: { evidence: 'Что считается силовой нагрузкой', nuance: 'Возраст — не переключатель', practice: 'Два устойчивых занятия' },
     title: 'Силовые после 30: зачем они нужны, даже если вас не интересует масса',
     lead: 'Мышечно-укрепляющая нагрузка входит в рекомендации ВОЗ не как эстетический бонус, а как часть общей физической активности.',
     date: '17.08.2026', readingTime: 7, image: img.health3, imageAlt: 'Гантели и силовая тренировка',
@@ -318,7 +318,7 @@ export const articles: Article[] = [
     sources: [WHO_ACTIVITY], related: ['150-minut-dvizheniya-v-nedelyu', 'son-posle-30', 'gorod-peshkom']
   },
   {
-    slug: 'alkogol-i-risk', category: 'health', articleType: 'evidence',
+    slug: 'alkogol-i-risk', category: 'health', articleType: 'evidence', sectionTitles: { evidence: 'Риск не равен гарантированному вреду', nuance: 'Популяционная позиция и личная ситуация', practice: 'Что действительно снижает риск' },
     title: 'Алкоголь и здоровье: что означает фраза «безопасного уровня нет»',
     lead: 'ВОЗ/Европа формулирует позицию жёстко, но её важно читать без драматизации и без подмены риска гарантированным исходом.',
     date: '17.08.2026', readingTime: 8, image: img.health4, imageAlt: 'Бокал на тёмном столе',
@@ -331,7 +331,7 @@ export const articles: Article[] = [
   },
 
   {
-    slug: 'gde-ai-uskoryaet-rabotu', category: 'work', articleType: 'evidence',
+    slug: 'gde-ai-uskoryaet-rabotu', category: 'work', articleType: 'evidence', sectionTitles: { evidence: 'Почему сильнее выиграли новички', nuance: 'Где заканчиваются эти 14 процентов', practice: 'Тестировать процесс, а не обещание' },
     title: 'Где генеративный ИИ действительно ускоряет работу',
     lead: 'Полевой эксперимент в службе поддержки показал заметный рост производительности — и особенно сильный эффект у менее опытных сотрудников.',
     date: '17.08.2026', readingTime: 9, image: img.work1, imageAlt: 'Рабочее пространство с ноутбуком',
@@ -355,7 +355,7 @@ export const articles: Article[] = [
     sources: [HBS_JAGGED], related: ['gde-ai-uskoryaet-rabotu', 'navyki-2026', 'stoitsizm-2026']
   },
   {
-    slug: 'gibridnaya-rabota-eksperiment', category: 'work', articleType: 'evidence',
+    slug: 'gibridnaya-rabota-eksperiment', category: 'work', articleType: 'evidence', sectionTitles: { evidence: 'Что изменили два дня дома', nuance: 'Почему это не формула для любой компании', practice: 'Режим работы как проверяемое решение' },
     title: 'Гибридная работа без войны мнений: что показал рандомизированный эксперимент',
     lead: 'В исследовании 1 612 сотрудников Trip.com два удалённых дня в неделю снизили увольнения и не ухудшили измеряемую производительность.',
     date: '17.08.2026', readingTime: 8, image: img.work3, imageAlt: 'Современное офисное здание',
@@ -404,7 +404,7 @@ export const articles: Article[] = [
     sources: [SEC_FEES], related: ['diversifikatsiya', 'indeksnye-fondy', 'inflyatsiya-i-lichnye-dengi']
   },
   {
-    slug: 'diversifikatsiya', category: 'money', articleType: 'evidence',
+    slug: 'diversifikatsiya', category: 'money', articleType: 'evidence', sectionTitles: { evidence: 'Разные названия — ещё не разные риски', nuance: 'Чего диверсификация не решает', practice: 'Сначала найти концентрацию' },
     title: 'Диверсификация без магии: что она делает и чего не обещает',
     lead: 'Распределение капитала между разными активами снижает зависимость от одной ставки, но не отменяет рыночный риск.',
     date: '17.08.2026', readingTime: 7, image: img.money3, imageAlt: 'Документы и калькулятор',
@@ -554,7 +554,7 @@ export const articles: Article[] = [
     sources: [WHO_NOISE], related: ['son-posle-30', 'kofein-bez-kulta', 'muzei-bez-marafona']
   },
   {
-    slug: 'kofein-bez-kulta', category: 'life', articleType: 'evidence',
+    slug: 'kofein-bez-kulta', category: 'life', articleType: 'evidence', sectionTitles: { evidence: 'Почему чашки ничего не измеряют', nuance: '400 мг — ориентир, а не цель', practice: 'Неделя честного учёта' },
     title: 'Кофе без культа: сколько кофеина — это уже не вопрос вкуса',
     lead: 'Управление по санитарному надзору США (FDA) называет 400 мг кофеина в день уровнем, который для большинства взрослых обычно не связан с негативными эффектами, но чувствительность сильно различается.',
     date: '17.08.2026', readingTime: 7, image: img.life2, imageAlt: 'Чашка кофе на деревянном столе',
