@@ -1,21 +1,21 @@
 # MORROW
 
-Production-ready editorial prototype for **MORROW** — a Russian-language digital magazine about health, work, money, relationships, culture and life.
+MORROW — русскоязычное editorial media о здоровье, работе, деньгах, отношениях, культуре и жизни. Проект собран на Next.js и публикуется как статический экспорт на GitHub Pages.
 
-The repository follows the provided visual reference: warm ivory surfaces, cinematic dark sections, large editorial serif typography, restrained interface details and image-led magazine layouts.
+Визуальная система сохраняет исходную ДНК MORROW: тёплый ivory-фон, тёмные cinematic-секции, крупную serif-типографику, журнальную композицию, большие изображения и сдержанный интерфейс.
 
-## Run locally
+## Локальный запуск
 
-Requires Node.js 20.9 or newer.
+Требуется Node.js 20.9 или новее.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Локальный адрес: `http://localhost:3000`.
 
-## Production build
+## Проверка production-сборки
 
 ```bash
 npm run lint
@@ -23,46 +23,41 @@ npm run typecheck
 npm run build
 ```
 
-The project uses a static Next.js export. `npm run build` writes the deployable site to `out/`.
+`npm run build` создаёт статический экспорт в `out/`.
 
-Pushes to `main` automatically build and deploy the site to [GitHub Pages](https://mburzhinsky-hub.github.io/morrow/). The deployment workflow sets `NEXT_PUBLIC_BASE_PATH=/morrow`, so all internal links and Next.js assets work from the repository subpath.
+## GitHub Pages
 
-## What is included
+Публикация выполняется через `.github/workflows/deploy-pages.yml`.
 
-- Responsive home page with cinematic hero carousel
-- Exactly six editorial verticals: Health, Work, Money, Relationships, Culture, Life
-- TODAY curated briefing
-- Main stories + verified-source signals
-- Worth Discovering feature
-- Book of the week
-- Events with filters and official-source links
-- MORROW WEEKEND
-- WATCH page
-- Newsletter UI with honest demo state (no fake backend success)
-- Search over all articles
-- 24 source-backed evergreen articles (4 per vertical)
-- Article template with reading column, key facts, source list, sharing, related stories and Article JSON-LD
-- Category pages with feature/latest/editor's picks layouts
-- Sitemap, robots, OpenGraph metadata and responsive mobile navigation
+Workflow задаёт:
 
-## Content integrity
+```text
+NEXT_PUBLIC_BASE_PATH=/morrow
+```
 
-The first edition uses official or primary/academic sources including WHO, AASM/SRS, NBER, Harvard Business School, Nature, World Economic Forum, Bank of Russia, SEC/Investor.gov, U.S. Surgeon General, Bureau of Labor Statistics, UNICEF, Stanford Encyclopedia of Philosophy, Project Gutenberg, MoMA, FDA and official museum pages.
+Поэтому внутренние маршруты и Next.js assets корректно работают из подкаталога `/morrow/`.
 
-The article author is intentionally **Редакция MORROW**; no fictional experts are invented. Content is written conservatively: correlations are not presented as causation, population guidance is not turned into individual medical advice, and financial explainers do not recommend individual securities.
+Публичный адрес: `https://mburzhinsky-hub.github.io/morrow/`.
 
-Current-event entries in this snapshot were verified for **17 August 2026** against official Tretyakov Gallery pages. Update current events before a later launch date.
+## Редакционная архитектура
 
-The original reference screenshot was used for art direction only and is not required by the application or included in the production repository.
+В проекте остаются шесть вертикалей: Здоровье, Работа, Деньги, Отношения, Культура и Жизнь.
 
-## Newsletter backend
+Материалы используют единый visual framework статьи, но имеют четыре редакционных типа:
 
-The subscription form deliberately reports that it is in demo mode. Connect your provider in `components/Newsletter.tsx` (for example, an API route + email platform) before launch.
+- `evidence` — доказательный разбор;
+- `perspective` — материал вокруг идеи, конфликта или интерпретации;
+- `guide` — практический маршрут или способ смотреть на тему;
+- `essay` — авторская журнальная форма без обязательного чек-листа в финале.
 
-## Images
+Тип хранится в `data/content.ts` через поле `articleType`. Рендеринг body сосредоточен в `components/ArticleBody.tsx`, поэтому визуальная система остаётся общей, а композиция материала меняется без дублирования шаблонов.
 
-Editorial photography is loaded from `images.unsplash.com`. For a commercial launch, replace/confirm the final image set and attribution/licensing policy as needed by your organization.
+## Источники и факты
 
-## Source prompt
+Фактические материалы используют официальные, первичные или академические источники. Медицинские и финансовые тексты формулируются консервативно: корреляция не выдаётся за причинность, популяционные рекомендации не превращаются в индивидуальные назначения, а объяснение финансового инструмента — в персональную инвестиционную рекомендацию.
 
-The original implementation brief is preserved as `MORROW_PROMPT.md`.
+Текущие события и сигналы являются оперативным слоем контента и должны перепроверяться перед будущими обновлениями редакции.
+
+## Изображения
+
+Редакционные изображения сейчас загружаются с `images.unsplash.com`. Перед коммерческим запуском необходимо финально проверить набор изображений и политику лицензирования/атрибуции.

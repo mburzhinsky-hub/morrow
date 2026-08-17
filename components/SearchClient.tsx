@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { articles, categories } from '@/data/content';
+import { articleTypeLabels, articles, categories } from '@/data/content';
 
 export default function SearchClient() {
   const [query, setQuery] = useState('');
@@ -18,7 +18,7 @@ export default function SearchClient() {
       <div className="search-results">
         {results.map(article => (
           <Link href={`/article/${article.slug}`} key={article.slug} className="search-result">
-            <span>{categories[article.category].label}</span><h2>{article.title}</h2><p>{article.lead}</p><small>{article.readingTime} мин →</small>
+            <span>{categories[article.category].label} · {articleTypeLabels[article.articleType].toUpperCase()}</span><h2>{article.title}</h2><p>{article.lead}</p><small>{article.readingTime} мин →</small>
           </Link>
         ))}
       </div>

@@ -30,7 +30,7 @@ export default function Home() {
 
         <section className="section shell home-editorial">
           <div className="main-column">
-            <div className="mini-section-head"><div><span className="section-kicker">ВЫБОР РЕДАКЦИИ</span><h2>Главное сегодня</h2></div><span>Три материала вместо бесконечной ленты</span></div>
+            <div className="mini-section-head"><div><span className="section-kicker">ВЫБОР РЕДАКЦИИ</span><h2>Главное сегодня</h2></div></div>
             <div className="main-stories-grid">
               {mainStories.map((article, index) => <StoryCard article={article} large={index === 0} key={article.slug} />)}
             </div>
@@ -41,9 +41,9 @@ export default function Home() {
         <section className="discovery shell section">
           <StoryCard article={discovery} large />
           <div className="discovery-note">
-            <span className="section-kicker">СТОИТ ОТКРЫТЬ</span>
-            <h2>Культура — не награда после продуктивного дня.</h2>
-            <p>Мы сознательно оставляем на главной место для вещей, которые не обещают сделать вас эффективнее: архитектуры, книг, выставок, музыки и любопытства.</p>
+            <span className="section-kicker">КУЛЬТУРА / МАРШРУТ</span>
+            <h2>В музее не обязательно успевать всё.</h2>
+            <p>Один зал, несколько работ и время на детали — маршрут, который оставляет место собственному взгляду, а не только списку обязательных точек.</p>
           </div>
         </section>
 
