@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Newsletter from '@/components/Newsletter';
 import ShareButtons from '@/components/ShareButtons';
 import StoryCard from '@/components/StoryCard';
 import { articles, categories, getArticle } from '@/data/content';
@@ -66,7 +65,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </article>
         {related.length > 0 && <section className="related section shell"><div className="mini-section-head"><h2>Читайте также</h2></div><div className="related-grid">{related.map(a => a && <StoryCard article={a} key={a.slug} />)}</div></section>}
-        <Newsletter />
       </main>
       <Footer />
     </>
