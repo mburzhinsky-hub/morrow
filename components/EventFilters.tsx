@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { events } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function EventFilters() {
   const [city, setCity] = useState('Все города');
@@ -21,7 +22,7 @@ export default function EventFilters() {
           <a className="event-page-card" key={event.id} href={event.url} target="_blank" rel="noreferrer">
             <div className="event-page-date"><strong>{event.date}</strong><span>{event.city}</span></div>
             <div><small>{event.category}</small><h2>{event.title}</h2><p>{event.description}</p><div className="event-details"><span>{event.place}</span><span>{event.time}</span></div></div>
-            <b>↗</b>
+            <ExternalLinkIcon />
           </a>
         ))}
       </div>

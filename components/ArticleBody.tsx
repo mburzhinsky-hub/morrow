@@ -1,4 +1,5 @@
 import type { Article } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 const defaultTitles = {
   evidence: {
@@ -28,7 +29,7 @@ function Sources({ article }: { article: Article }) {
             <strong>{source.title}</strong>
             <span>{source.organization} · {source.date}</span>
           </div>
-          <b aria-hidden="true">↗</b>
+          <ExternalLinkIcon />
         </a>
       ))}
     </section>

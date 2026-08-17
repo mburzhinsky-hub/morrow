@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { watchItems } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function WatchPreview() {
   return (
@@ -9,7 +10,7 @@ export default function WatchPreview() {
       <div className="watch-grid">
         {watchItems.map((item) => (
           <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="watch-card">
-            <div className="watch-image"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw"/><span className="watch-play">↗</span></div>
+            <div className="watch-image"><Image src={item.image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw"/><span className="watch-play"><ExternalLinkIcon /></span></div>
             <small>{item.category} · {item.duration}</small>
             <h3>{item.title}</h3>
             <p>{item.channel}</p>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { events } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function EventsPreview() {
   return (
@@ -10,7 +11,7 @@ export default function EventsPreview() {
           <a key={event.id} href={event.url} target="_blank" rel="noreferrer" className="event-row">
             <div className="event-date"><span>{String(i + 1).padStart(2, '0')}</span><b>{event.date}</b></div>
             <div><small>{event.category} · {event.city}</small><h3>{event.title}</h3><p>{event.place}</p></div>
-            <span className="event-arrow">↗</span>
+            <ExternalLinkIcon className="event-arrow" />
           </a>
         ))}
       </div>

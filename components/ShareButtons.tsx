@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function ShareButtons({ title }: { title: string }) {
   const [copied, setCopied] = useState(false);
@@ -13,5 +14,5 @@ export default function ShareButtons({ title }: { title: string }) {
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1800);
   };
-  return <button className="share-button" onClick={share}>{copied ? 'Ссылка скопирована' : 'Поделиться ↗'}</button>;
+  return <button className="share-button" onClick={share}>{copied ? 'Ссылка скопирована' : <><span>Поделиться</span><ExternalLinkIcon /></>}</button>;
 }

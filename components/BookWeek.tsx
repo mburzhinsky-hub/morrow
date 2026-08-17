@@ -1,4 +1,5 @@
 import { bookOfWeek } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function BookWeek() {
   return (
@@ -18,7 +19,7 @@ export default function BookWeek() {
           <div><dt>Что получите</dt><dd>{bookOfWeek.get}</dd></div>
           <div><dt>Время чтения</dt><dd>{bookOfWeek.reading}</dd></div>
         </dl>
-        <a className="pill pill-outline-light" href={bookOfWeek.source} target="_blank" rel="noreferrer">О книге у издателя <span>↗</span></a>
+        <a className="pill pill-outline-light" href={bookOfWeek.source} target="_blank" rel="noreferrer">О книге у издателя <ExternalLinkIcon /></a>
       </div>
     </article>
   );

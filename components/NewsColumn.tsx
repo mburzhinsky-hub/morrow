@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { newsSignals } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function NewsColumn() {
   return (
@@ -16,7 +17,7 @@ export default function NewsColumn() {
               <div className="news-meta"><small>{item.category}</small><span>{item.date}</span></div>
               <h3>{item.title}</h3>
               <p>{item.note}</p>
-              <div className="news-source"><span>{item.source}</span><b>↗</b></div>
+              <div className="news-source"><span>{item.source}</span><ExternalLinkIcon /></div>
             </div>
           </a>
         ))}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { todayItems } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function TodayBriefing() {
   return (
@@ -20,7 +21,7 @@ export default function TodayBriefing() {
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <div className="today-meta"><span>{item.source}</span><span>{item.date}</span><span>{item.duration}</span></div>
-              <span className="today-arrow">↗</span>
+              <ExternalLinkIcon className="today-arrow" />
             </>
           );
           if ('external' in item && item.external) {

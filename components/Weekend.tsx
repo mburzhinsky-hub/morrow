@@ -1,4 +1,5 @@
 import { weekend } from '@/data/content';
+import ExternalLinkIcon from '@/components/ExternalLinkIcon';
 
 export default function Weekend() {
   return (
@@ -15,7 +16,7 @@ export default function Weekend() {
               <div className="weekend-meta"><span>{item.city}</span><span>{item.date}</span></div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <div className="weekend-source"><span>{item.place}</span><b>↗</b></div>
+              <div className="weekend-source"><span>{item.place}</span><ExternalLinkIcon /></div>
             </a>
           ))}
         </div>
