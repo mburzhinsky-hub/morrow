@@ -17,7 +17,7 @@ export default function SearchClient() {
       <div className="search-count">{results.length} материалов</div>
       <div className="search-results">
         {results.map(article => (
-          <Link href={`/article/${article.slug}`} key={article.slug} className="search-result">
+          <Link href={`/article/${article.slug}/`} key={article.slug} className="search-result">
             <span>{categories[article.category].label} · {articleTypeLabels[article.articleType].toUpperCase()}</span><h2>{article.title}</h2><p>{article.lead}</p><small>{article.readingTime} мин →</small>
           </Link>
         ))}
