@@ -5,7 +5,7 @@ import { watchItems } from '@/data/content';
 export default function WatchPreview() {
   return (
     <section className="section shell">
-      <div className="mini-section-head"><div><span className="section-kicker">WATCH / READ / LISTEN</span><h2>Смотреть внимательно</h2></div><Link href="/watch">Вся подборка →</Link></div>
+      <div className="mini-section-head"><div><span className="section-kicker">СМОТРЕТЬ / ЧИТАТЬ / СЛУШАТЬ</span><h2>Смотреть внимательно</h2></div><Link href="/watch">Вся подборка →</Link></div>
       <div className="watch-grid">
         {watchItems.map((item) => (
           <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="watch-card">
