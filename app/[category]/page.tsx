@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import StoryCard from '@/components/StoryCard';
 import { articleTypeLabels, articles, categories, getCategoryArticles, type CategoryKey } from '@/data/content';
+import { sitePath } from '@/lib/sitePath';
 
 const valid = Object.keys(categories) as CategoryKey[];
 
@@ -55,7 +55,7 @@ export default async function CategoryRoute({ params }: { params: Promise<{ cate
             <span>ГЛАВНЫЙ МАТЕРИАЛ · {articleTypeLabels[feature.articleType].toUpperCase()}</span>
             <h2>{feature.title}</h2>
             <p>{feature.lead}</p>
-            <Link href={`/article/${feature.slug}/`}>Читать →</Link>
+            <a href={sitePath(`/article/${feature.slug}/`)}>Читать →</a>
           </div>
         </section>
         <section className="section shell">

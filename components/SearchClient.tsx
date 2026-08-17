@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
 import { articleTypeLabels, articles, categories } from '@/data/content';
+import { sitePath } from '@/lib/sitePath';
 
 export default function SearchClient() {
   const [query, setQuery] = useState('');
@@ -17,9 +17,9 @@ export default function SearchClient() {
       <div className="search-count">{results.length} материалов</div>
       <div className="search-results">
         {results.map(article => (
-          <Link href={`/article/${article.slug}/`} key={article.slug} className="search-result">
+          <a href={sitePath(`/article/${article.slug}/`)} key={article.slug} className="search-result">
             <span>{categories[article.category].label} · {articleTypeLabels[article.articleType].toUpperCase()}</span><h2>{article.title}</h2><p>{article.lead}</p><small>{article.readingTime} мин →</small>
-          </Link>
+          </a>
         ))}
       </div>
     </div>
