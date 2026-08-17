@@ -50,6 +50,24 @@ function ArticleRail({ article }: { article: Article }) {
   );
 }
 
+function GuideSteps({ article }: { article: Article }) {
+  if (!article.guideSteps?.length) return null;
+
+  return (
+    <ol className="guide-steps" aria-label="Шаги гида">
+      {article.guideSteps.map((step, index) => (
+        <li key={step.title}>
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export default function ArticleBody({ article }: { article: Article }) {
   const hasRail = article.articleType === 'evidence' || article.articleType === 'guide';
 
@@ -77,6 +95,7 @@ export default function ArticleBody({ article }: { article: Article }) {
         <p className="dropcap">{article.thesis}</p>
         <h2>{titles.evidence}</h2>
         <p>{article.evidence}</p>
+        {article.articleType === 'guide' && <GuideSteps article={article} />}
         <h2>{titles.nuance}</h2>
         <p>{article.nuance}</p>
         <h2>{titles.practice}</h2>
