@@ -10,7 +10,7 @@ export default function Footer() {
         <div><span>MORROW</span><Link href="/about">О проекте</Link><Link href="/about#principles">Принципы редакции</Link><Link href="/about#contact">Контакты</Link><Link href="/about#contact">Реклама</Link></div>
         <div><span>СОЦСЕТИ</span><p className="footer-pending">Telegram · готовим запуск</p><p className="footer-pending">YouTube · готовим запуск</p><p className="footer-pending">Instagram · готовим запуск</p></div>
       </div>
-      <div className="footer-bottom"><span>© 2026 MORROW</span><span>Редакционный прототип · материалы опираются на проверяемые источники</span></div>
+      <div className="footer-bottom"><span>© 2026 MORROW</span><span>Редакционные материалы · проверяемые источники</span></div>
     </footer>
   );
 }

@@ -10,7 +10,6 @@ export default function TodayBriefing() {
           <h2>СЕГОДНЯ</h2>
           <p>Что стоит вашего времени сегодня</p>
         </div>
-        <p className="section-note">Пять вещей. Без бесконечной ленты.</p>
       </div>
       <div className="today-grid">
         {todayItems.map((item) => {
