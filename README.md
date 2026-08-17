@@ -21,10 +21,11 @@ Open `http://localhost:3000`.
 npm run lint
 npm run typecheck
 npm run build
-npm start
 ```
 
-The project is ready for a standard Next.js deployment (for example, Vercel). Before production launch, replace the placeholder domain `https://morrow.example` in metadata, sitemap and robots with the real domain.
+The project uses a static Next.js export. `npm run build` writes the deployable site to `out/`.
+
+Pushes to `main` automatically build and deploy the site to [GitHub Pages](https://mburzhinsky-hub.github.io/morrow/). The deployment workflow sets `NEXT_PUBLIC_BASE_PATH=/morrow`, so all internal links and Next.js assets work from the repository subpath.
 
 ## What is included
 
