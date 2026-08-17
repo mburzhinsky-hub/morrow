@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,6 +7,7 @@ import ShareButtons from '@/components/ShareButtons';
 import StoryCard from '@/components/StoryCard';
 import ArticleBody from '@/components/ArticleBody';
 import { articleTypeLabels, articles, categories, getArticle } from '@/data/content';
+import { sitePath } from '@/lib/sitePath';
 
 export function generateStaticParams() {
   return articles.map(article => ({ slug: article.slug }));
@@ -49,9 +49,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
         <article>
           <header className="article-header shell">
-            <Link href={`/${article.category}/`} className="article-category">
+            <a href={sitePath(`/${article.category}/`)} className="article-category">
               {category.label} · {articleTypeLabels[article.articleType]}
-            </Link>
+            </a>
             <h1>{article.title}</h1>
             <p className="article-lead">{article.lead}</p>
             <div className="article-byline">

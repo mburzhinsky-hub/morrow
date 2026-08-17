@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { categories } from '@/data/content';
+import { sitePath } from '@/lib/sitePath';
 
 export default function Header({ dark = false }: { dark?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
@@ -25,7 +26,7 @@ export default function Header({ dark = false }: { dark?: boolean }) {
         <nav className="desktop-nav" aria-label="Основная навигация">
           <Link href="/#today">Сегодня</Link>
           {(Object.keys(categories) as Array<keyof typeof categories>).map((key) => (
-            <Link key={key} href={`/${key}/`}>{categories[key].label[0] + categories[key].label.slice(1).toLowerCase()}</Link>
+            <a key={key} href={sitePath(`/${key}/`)}>{categories[key].label[0] + categories[key].label.slice(1).toLowerCase()}</a>
           ))}
         </nav>
         <div className="header-actions">
@@ -40,7 +41,7 @@ export default function Header({ dark = false }: { dark?: boolean }) {
       <div className={`mobile-panel ${open ? 'open' : ''}`}>
         <Link href="/#today" onClick={() => setOpen(false)}>Сегодня</Link>
         {(Object.keys(categories) as Array<keyof typeof categories>).map((key) => (
-          <Link key={key} href={`/${key}/`} onClick={() => setOpen(false)}>{categories[key].label}</Link>
+          <a key={key} href={sitePath(`/${key}/`)} onClick={() => setOpen(false)}>{categories[key].label}</a>
         ))}
         <Link href="/events" onClick={() => setOpen(false)}>События</Link>
         <Link href="/watch" onClick={() => setOpen(false)}>Подборка</Link>
