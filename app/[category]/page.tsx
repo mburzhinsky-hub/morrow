@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -39,7 +40,7 @@ export default async function CategoryRoute({ params }: { params: Promise<{ cate
         </section>
         <section className="category-feature shell">
           <StoryCard article={feature} large />
-          <div className="category-feature-copy"><span>FEATURE STORY</span><h2>{feature.title}</h2><p>{feature.lead}</p><a href={`/article/${feature.slug}`}>Читать →</a></div>
+          <div className="category-feature-copy"><span>FEATURE STORY</span><h2>{feature.title}</h2><p>{feature.lead}</p><Link href={`/article/${feature.slug}`}>Читать →</Link></div>
         </section>
         <section className="section shell">
           <div className="mini-section-head"><h2>Latest</h2><span>{items.length} материала в первой редакции</span></div>
