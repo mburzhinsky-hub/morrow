@@ -1,8 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { articles, categories } from '@/data/content';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://morrow.example';
+  const base = 'https://mburzhinsky-hub.github.io/morrow';
   return [
     { url: base, lastModified: new Date('2026-08-17') },
     ...Object.keys(categories).map(category => ({ url: `${base}/${category}`, lastModified: new Date('2026-08-17') })),
