@@ -8,7 +8,6 @@ import BookWeek from '@/components/BookWeek';
 import EventsPreview from '@/components/EventsPreview';
 import Weekend from '@/components/Weekend';
 import WatchPreview from '@/components/WatchPreview';
-import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 import { articles, heroSlugs } from '@/data/content';
 
@@ -31,7 +30,7 @@ export default function Home() {
 
         <section className="section shell home-editorial">
           <div className="main-column">
-            <div className="mini-section-head"><div><span className="section-kicker">EDITOR&apos;S PICK</span><h2>Главное сегодня</h2></div><span>Три материала вместо бесконечной ленты</span></div>
+            <div className="mini-section-head"><div><span className="section-kicker">ВЫБОР РЕДАКЦИИ</span><h2>Главное сегодня</h2></div><span>Три материала вместо бесконечной ленты</span></div>
             <div className="main-stories-grid">
               {mainStories.map((article, index) => <StoryCard article={article} large={index === 0} key={article.slug} />)}
             </div>
@@ -42,7 +41,7 @@ export default function Home() {
         <section className="discovery shell section">
           <StoryCard article={discovery} large />
           <div className="discovery-note">
-            <span className="section-kicker">WORTH DISCOVERING</span>
+            <span className="section-kicker">СТОИТ ОТКРЫТЬ</span>
             <h2>Культура — не награда после продуктивного дня.</h2>
             <p>Мы сознательно оставляем на главной место для вещей, которые не обещают сделать вас эффективнее: архитектуры, книг, выставок, музыки и любопытства.</p>
           </div>
@@ -55,7 +54,6 @@ export default function Home() {
 
         <Weekend />
         <WatchPreview />
-        <Newsletter />
       </main>
       <Footer />
     </>
