@@ -52,7 +52,7 @@ The article author is intentionally **Редакция MORROW**; no fictional ex
 
 Current-event entries in this snapshot were verified for **17 August 2026** against official Tretyakov Gallery pages. Update current events before a later launch date.
 
-The reference screenshot is stored in `public/design-reference.png` for art-direction comparison only and is not rendered inside the product.
+The original reference screenshot was used for art direction only and is not required by the application or included in the production repository.
 
 ## Newsletter backend
 
